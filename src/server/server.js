@@ -5,6 +5,8 @@ const typeDefs = require('../api/types/shema')
 const resolvers = require('../api/resolvers')
 const cors = require('cors')
 const db = require('../db/db')
+const models = require('../db/models')
+const {getUser} = require("../utils");
 const DB_HOST = process.env.DB_HOST
 const port = process.env.PORT_SERVER
 
@@ -12,7 +14,12 @@ const startServer = async () => {
     const app = express()
     const apolloServer = new ApolloServer({
         typeDefs,
-        resolvers
+        resolvers,
+        context: ({req, res}) => {
+            const token = req.headers.authorization
+            const user = getUser(token)
+            return {models, user}
+        }
     })
     await apolloServer.start()
 

@@ -1,15 +1,35 @@
 import React from "react";
 import {useForm} from "react-hook-form";
 import Input from "../components/Input";
+import {gql, useApolloClient, useMutation} from "@apollo/client"
+import {useNavigate} from "react-router-dom";
+
+const SET_USER = gql`
+    mutation Mutation($email: String!, $password: String!) {
+        createUser(email: $email, password: $password)
+    }
+`
 
 const Register = () => {
+    const client = useApolloClient()
+    const navigate = useNavigate()
+    const goToLogin = () => navigate('/login')
+    const [createUser, {data, loading, error}] = useMutation(SET_USER, {
+        onCompleted: data => {
+            localStorage.setItem("token", data.createUser)
+        }
+    })
     const {register, handleSubmit, reset, formState: {errors}} = useForm({
         mode: 'onBlur'
     })
     const onSubmit = data => {
-        console.log(data)
+        createUser({variables: {email: data.email, password: data.password}})
         reset()
     }
+    if (loading) return 'loading...'
+    if (error) return `Произошла ошибка отправки ${error.message}`
+
+
     return (
             <form className='px-8 pt-6 pb-8 mb-2' onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4">

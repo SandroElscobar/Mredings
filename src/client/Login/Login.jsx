@@ -2,9 +2,25 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import Input from "../components/Input";
 import {useNavigate} from "react-router-dom";
+import {gql, useApolloClient, useMutation} from "@apollo/client"
 
+
+const LOG_IN = gql`
+    mutation Mutation($email: String!, $password: String!) {
+        signIn(email: $email, password: $password)
+    }
+`
 
 const Login = () => {
+    const client = useApolloClient()
+    const[signIn, {error, loading}] = useMutation(LOG_IN, {
+        onCompleted: data => {
+            // Сохраняем тоен
+            localStorage.setItem('token', data.signIn)
+            // Обновляем локальный хэш
+            client.writeData({data: {isLoggedIn:true}})
+        }
+    })
     const {
         register,
         handleSubmit,
@@ -16,8 +32,7 @@ const Login = () => {
         mode: "onBlur"
     })
     const onSubmit = data => {
-        goPersonalAccount()
-        reset()
+        signIn({variables:{email: data.email, password: data.password}})
     }
 
     const navigate = useNavigate()
@@ -27,12 +42,12 @@ const Login = () => {
     return (
             <form onSubmit={handleSubmit(onSubmit)} className='px-8 pt-6 pb-8 mb-2'>
                 <div className='mb-4'>
-                    <Input type='login'
+                    <Input type='email'
                            label='Введите логин'
                            placeholder="Введите логин"
                            classNameLabel='block text-gray-700 text-sm font-bold mb-2'
                            classNameInput='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                           {...register('login', {
+                           {...register('email', {
                                required: "Поле обязательно к заполнению",
                                minLength: {
                                    value: 5,
