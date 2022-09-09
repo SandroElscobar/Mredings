@@ -5,6 +5,7 @@ import {BrowserRouter} from "react-router-dom";
 import {ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from "@apollo/client"
 import {setContext} from "apollo-link-context"
 
+
 const uri = "http://localhost:4000/api"
 const httpLink = createHttpLink({uri})
 const cache = new InMemoryCache()
@@ -26,6 +27,7 @@ const client = new ApolloClient({
     resolvers: {},
     connectToDevTools: true
 })
+
 
 
 const div = document.getElementById('root')

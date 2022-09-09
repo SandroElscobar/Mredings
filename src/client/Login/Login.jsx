@@ -12,13 +12,10 @@ const LOG_IN = gql`
 `
 
 const Login = () => {
-    const client = useApolloClient()
     const[signIn, {error, loading}] = useMutation(LOG_IN, {
         onCompleted: data => {
-            // Сохраняем тоен
             localStorage.setItem('token', data.signIn)
-            // Обновляем локальный хэш
-            client.writeData({data: {isLoggedIn:true}})
+            goPersonalAccount()
         }
     })
     const {
@@ -37,7 +34,7 @@ const Login = () => {
 
     const navigate = useNavigate()
     const goPersonalAccount = () => {
-        navigate('/account')
+        navigate('account')
     }
     return (
             <form onSubmit={handleSubmit(onSubmit)} className='px-8 pt-6 pb-8 mb-2'>

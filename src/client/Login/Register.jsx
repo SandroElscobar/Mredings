@@ -11,12 +11,12 @@ const SET_USER = gql`
 `
 
 const Register = () => {
-    const client = useApolloClient()
     const navigate = useNavigate()
     const goToLogin = () => navigate('/login')
-    const [createUser, {data, loading, error}] = useMutation(SET_USER, {
+    const [createUser, {loading, error}] = useMutation(SET_USER, {
         onCompleted: data => {
             localStorage.setItem("token", data.createUser)
+            goToLogin()
         }
     })
     const {register, handleSubmit, reset, formState: {errors}} = useForm({
@@ -28,7 +28,6 @@ const Register = () => {
     }
     if (loading) return 'loading...'
     if (error) return `Произошла ошибка отправки ${error.message}`
-
 
     return (
             <form className='px-8 pt-6 pb-8 mb-2' onSubmit={handleSubmit(onSubmit)}>

@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 require('../../db/models')
+const {AuthenticationError} = require("apollo-server-core");
 
 
 module.exports = {
@@ -24,17 +25,14 @@ module.exports = {
             email = email.trim().toLowerCase()
         }
 
-        const user = await models.User.findOne({
-            $eq: [{email}]
-        })
-
+        const user = await models.User.findOne({email})
         if (!user) {
-            new Error("Пользователь не найден")
+             throw new AuthenticationError("Пользователь не найден")
         }
 
         const valid = await bcrypt.compare(password, user.password)
         if (!valid) {
-            new Error("Неверно введен пароль")
+            throw new AuthenticationError("Неверно  введен пароль")
         }
         return jwt.sign({id: user._id}, process.env.JWT_SECRET)
     }
