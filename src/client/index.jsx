@@ -4,6 +4,9 @@ import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import {ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from "@apollo/client"
 import {setContext} from "apollo-link-context"
+import {Provider} from 'react-redux'
+import store from "../store";
+
 
 
 const uri = "http://localhost:4000/api"
@@ -35,9 +38,11 @@ const root = createRoot(div)
 
 root.render(
     <ApolloProvider client={client}>
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
+        </Provider>
     </ApolloProvider>
 
 )
