@@ -6,6 +6,7 @@ import {ApolloClient, InMemoryCache, ApolloProvider, createHttpLink} from "@apol
 import {setContext} from "apollo-link-context"
 import {Provider} from 'react-redux'
 import store from "../store";
+import {authUser} from "../utils/authUser";
 
 
 
@@ -30,8 +31,6 @@ const client = new ApolloClient({
     resolvers: {},
     connectToDevTools: true
 })
-
-
 
 const div = document.getElementById('root')
 const root = createRoot(div)

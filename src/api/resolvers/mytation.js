@@ -6,11 +6,12 @@ const {AuthenticationError} = require("apollo-server-core");
 
 
 module.exports = {
-    createUser: async (parent, {email, password}, {models}) => {
+    createUser: async (parent, {name, email, password}, {models}) => {
         email = email.trim().toLowerCase()
         const hashed = await bcrypt.hash(password, 10)
         try {
             const user = await models.User.create({
+                name,
                 email,
                 password: hashed
             })
@@ -34,6 +35,6 @@ module.exports = {
         if (!valid) {
             throw new AuthenticationError("Неверно  введен пароль")
         }
-        return jwt.sign({id: user._id}, process.env.JWT_SECRET)
+        return jwt.sign({id: user._id, name: user.name}, process.env.JWT_SECRET)
     }
 }

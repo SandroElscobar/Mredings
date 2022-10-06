@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {authUser} from "../utils/authUser";
 
 export const userName = createSlice({
     name: 'user',
     initialState: {
-        name: "Собака сутулая"
+        name: authUser(localStorage.getItem('token'))
     },
     reducers: {
         setUserName(state, action) {

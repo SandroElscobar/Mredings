@@ -2,10 +2,11 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import Input from "../components/Input";
 import {NavLink, useNavigate} from "react-router-dom";
-import {gql, useMutation} from "@apollo/client"
+import {gql, useMutation} from "@apollo/client";
 import {useDispatch} from "react-redux";
+import {authUser} from "../../utils/authUser";
 import {setUserName} from "../../store/login";
-
+import {setIsLoggedIn} from "../../store/isloggedin";
 
 const LOG_IN = gql`
     mutation Mutation($email: String!, $password: String!) {
@@ -14,14 +15,20 @@ const LOG_IN = gql`
 `
 
 const Login = () => {
-    const navigate = useNavigate()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const[signIn, {error, loading}] = useMutation(LOG_IN, {
         onCompleted: data => {
             localStorage.setItem('token', data.signIn)
+            dispatch(setUserName(authUser(data.signIn)))
+            dispatch(setIsLoggedIn(true))
             navigate('account')
         }
     })
+    const onSubmit = data => {
+        signIn({variables:{email: data.email, password: data.password}})
+
+    }
     const {
         register,
         handleSubmit,
@@ -32,10 +39,6 @@ const Login = () => {
     } = useForm({
         mode: "onBlur"
     })
-    const onSubmit = data => {
-        const user = signIn({variables:{email: data.email, password: data.password}})
-        dispatch(setUserName(data.email))
-    }
 
     const goToRegister = (evt) => {
         evt.preventDefault()
@@ -60,7 +63,7 @@ const Login = () => {
                                    message: "Пароль должен состоять не менее чем из 5 символов"}
                            })}
                     />
-                    {errors.login && <span className='pl-2 text-red-500 text-sm'>{errors.login.message || "Необходимо ввести логин"}</span>}
+                    {errors.email && <span className='pl-2 text-red-500 text-sm'>{errors.email.message || "Необходимо ввести логин"}</span>}
                 </div>
                 <div className='pb-5'>
                     <Input

@@ -3,11 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 require('dotenv').config()
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const NODE_ENV = process.env.NODE_ENV
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     mode: NODE_ENV,
     resolve: {
-        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"]
+        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
     },
     entry: path.resolve(__dirname, '../src/client/index.jsx'),
     output: {
@@ -33,7 +34,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({template: "./src/client/index.html"}),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new Dotenv(),
     ],
     devServer: {
         historyApiFallback: true,
