@@ -17,7 +17,6 @@ module.exports = {
             })
             return jwt.sign({id: user._id}, process.env.JWT_SECRET)
         } catch (err) {
-            console.log(err)
             throw new Error("Не удалось создать пользователя")
         }
     },
@@ -36,5 +35,21 @@ module.exports = {
             throw new AuthenticationError("Неверно  введен пароль")
         }
         return jwt.sign({id: user._id, name: user.name}, process.env.JWT_SECRET)
+    },
+    createCity: async (parent, {name}, {models, user}) => {
+        if (!user) return new AuthenticationError("Вы должны авторизоваться чтобы создавать проекты!")
+        const city =  await models.City.create({
+            name,
+            street: []
+        })
+        return "Проект создан успешно!"
+    },
+    setStreet:async (parent, {id, name},{models, user}) => {
+        if (!user) {
+            new AuthenticationError("Вы должны авторизоваться чтобы создавать проекты!")
+        }
+        const street = await models.Street.create({name})
+        await models.City.updateOne({id}, {$push: {street}})
+        return "Yes"
     }
 }

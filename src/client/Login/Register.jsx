@@ -3,12 +3,9 @@ import {useForm} from "react-hook-form";
 import Input from "../components/Input";
 import {gql, useMutation} from "@apollo/client"
 import {useNavigate} from "react-router-dom";
+import {SET_USER} from "../API/api_mutation";
 
-const SET_USER = gql`
-    mutation Mutation($name: String!, $email: String!, $password: String!) {
-        createUser(name: $name, email: $email, password: $password)
-    }
-`
+
 
 const Register = () => {
     const navigate = useNavigate()

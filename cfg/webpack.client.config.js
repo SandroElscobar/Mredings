@@ -43,7 +43,8 @@ module.exports = {
         hot: true,
         devMiddleware: {
             writeToDisk: true
-        }
+        },
+        open: true
     },
     devtool: 'source-map',
 }

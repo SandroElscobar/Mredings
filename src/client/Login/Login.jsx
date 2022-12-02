@@ -7,12 +7,8 @@ import {useDispatch} from "react-redux";
 import {authUser} from "../../utils/authUser";
 import {setUserName} from "../../store/login";
 import {setIsLoggedIn} from "../../store/isloggedin";
+import {LOG_IN} from "../API/api_mutation";
 
-const LOG_IN = gql`
-    mutation Mutation($email: String!, $password: String!) {
-        signIn(email: $email, password: $password)
-    }
-`
 
 const Login = () => {
     const dispatch = useDispatch()
@@ -45,8 +41,8 @@ const Login = () => {
         navigate('register')
     }
     return (
-        <div className='max-w-2xl m-auto border-2 rounded-t-2xl'>
-            <form onSubmit={handleSubmit(onSubmit)} className='px-8 pt-6 pb-8 mb-2'>
+        <div className='max-w-2xl mx-auto border-2 rounded-t-2xl'>
+            <form onSubmit={handleSubmit(onSubmit)} className='m-auto px-8 pt-6 pb-8'>
                 <div className='text-2xl mb-5 font-medium'>
                     <h2 className='text-center'>Личный кабинет</h2>
                 </div>

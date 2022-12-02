@@ -11,4 +11,4 @@ const runServer = async () => {
     await server.start()
 }
 
-runServer()
+runServer().then(() => console.log('Сервер запущен'))

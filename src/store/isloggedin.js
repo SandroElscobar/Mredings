@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {authUser} from "../utils/authUser";
 
 export const isLoggedIn = createSlice({
     name: 'isLoggedIn',
     initialState: {
-        value: false
+        value: !!localStorage.getItem('token')
     },
     reducers: {
         setIsLoggedIn(state, action) {
