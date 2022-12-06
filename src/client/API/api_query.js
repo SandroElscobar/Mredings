@@ -5,6 +5,12 @@ const GET_CITY = gql`
         city {
             id
             name
+        }
+    }
+`
+const GET_STREET = gql`
+    query Query($getStreetId: String!, $name: String!) {
+        getStreet(id: $getStreetId, name: $name) {
             street {
                 id
                 name
@@ -13,4 +19,5 @@ const GET_CITY = gql`
     }
 `
 
-export default GET_CITY
+export {GET_CITY, GET_STREET}
+

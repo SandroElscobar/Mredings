@@ -14,13 +14,18 @@ const SET_USER = gql`
 
 const CREATE_CITY = gql`
     mutation Mutation($name: String!) {
-        createCity(name: $name)
+        createCity(name: $name) {
+            id
+            name
+        }
     }
 `
 
 const SET_STREET = gql`
-    mutation Mutation($setStreetId: String!, $name: String!) {
-        setStreet(id: $setStreetId, name: $name)
+    mutation SetStreet($setStreetId: String!, $name: String!) {
+        setStreet(id: $setStreetId, name: $name) {
+            id
+        }
     }
 `
 

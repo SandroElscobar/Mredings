@@ -5493,7 +5493,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Project_CreateCity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Project/CreateCity */ "./src/client/WindowLK/Project/CreateCity.jsx");
+/* harmony import */ var _Project_Create_CreateCity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Project/Create/CreateCity */ "./src/client/WindowLK/Project/Create/CreateCity.jsx");
 
 
 
@@ -5540,10 +5540,10 @@ var MainLK = function MainLK() {
 
 /***/ }),
 
-/***/ "./src/client/WindowLK/Project/CreateCity.jsx":
-/*!****************************************************!*\
-  !*** ./src/client/WindowLK/Project/CreateCity.jsx ***!
-  \****************************************************/
+/***/ "./src/client/WindowLK/Project/Create/CreateCity.jsx":
+/*!***********************************************************!*\
+  !*** ./src/client/WindowLK/Project/Create/CreateCity.jsx ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5553,11 +5553,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Input */ "./src/client/components/Input.jsx");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Input */ "./src/client/components/Input.jsx");
 /* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useMutation.js");
-/* harmony import */ var _API_api_mutation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../API/api_mutation */ "./src/client/API/api_mutation.js");
-/* harmony import */ var _API_api_query__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../API/api_query */ "./src/client/API/api_query.js");
+/* harmony import */ var _API_api_mutation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../API/api_mutation */ "./src/client/API/api_mutation.js");
+/* harmony import */ var _API_api_query__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../API/api_query */ "./src/client/API/api_query.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5583,7 +5583,7 @@ var CreateCity = function CreateCity(_ref) {
 
   var _useMutation = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_4__.useMutation)(_API_api_mutation__WEBPACK_IMPORTED_MODULE_2__.CREATE_CITY, {
     refetchQueries: [{
-      query: _API_api_query__WEBPACK_IMPORTED_MODULE_3__["default"]
+      query: _API_api_query__WEBPACK_IMPORTED_MODULE_3__.GET_CITY
     }]
   }),
       _useMutation2 = _slicedToArray(_useMutation, 2),
@@ -5651,10 +5651,10 @@ var CreateCity = function CreateCity(_ref) {
 
 /***/ }),
 
-/***/ "./src/client/WindowLK/Project/NameProject/City.jsx":
-/*!**********************************************************!*\
-  !*** ./src/client/WindowLK/Project/NameProject/City.jsx ***!
-  \**********************************************************/
+/***/ "./src/client/WindowLK/Project/Create/CreateStreet.jsx":
+/*!*************************************************************!*\
+  !*** ./src/client/WindowLK/Project/Create/CreateStreet.jsx ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -5664,13 +5664,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_street__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../store/street */ "./src/store/street.js");
-/* harmony import */ var _CreateCity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CreateCity */ "./src/client/WindowLK/Project/CreateCity.jsx");
-/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
-/* harmony import */ var _Street__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Street */ "./src/client/WindowLK/Project/NameProject/Street.jsx");
-/* harmony import */ var _API_api_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../API/api_query */ "./src/client/API/api_query.js");
+/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/Input */ "./src/client/components/Input.jsx");
+/* harmony import */ var _API_api_mutation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../API/api_mutation */ "./src/client/API/api_mutation.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useMutation.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5689,22 +5686,124 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var CreateStreet = function CreateStreet(_ref) {
+  var isOpenStreet = _ref.isOpenStreet,
+      setIsOpenStreet = _ref.setIsOpenStreet,
+      refetch = _ref.refetch;
+
+  var _useMutation = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useMutation)(_API_api_mutation__WEBPACK_IMPORTED_MODULE_2__.SET_STREET),
+      _useMutation2 = _slicedToArray(_useMutation, 2),
+      setStreet = _useMutation2[0],
+      _useMutation2$ = _useMutation2[1],
+      error = _useMutation2$.error,
+      loading = _useMutation2$.loading;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  if (error) return console.log(error.message);
+  if (loading) return "Loading...";
+
+  var onChange = function onChange(evt) {
+    evt.preventDefault();
+    setValue(evt.target.value);
+  };
+
+  var handlerCreateStreet = function handlerCreateStreet(evt) {
+    evt.preventDefault();
+    setStreet({
+      variables: {
+        id: localStorage.getItem('city'),
+        name: value
+      }
+    }).then(function () {
+      return console.log("Успешно");
+    });
+  };
+
+  return isOpenStreet && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "max-w-2xl border-2 rounded-lg border-blue-500 absolute right-[-300px] bg-white"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute right-[-15px] top-[-15px]"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_4__.AiFillCloseCircle, {
+    onClick: function onClick() {
+      return setIsOpenStreet(false);
+    },
+    size: 30,
+    color: "blue",
+    className: "hover:fill-amber-400 overflow-hidden stroke-lime-700 hover:cursor-pointer rounded-[50%] bg-white"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "p-3",
+    onSubmit: handlerCreateStreet
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    label: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0443\u043B\u0438\u0446\u0443",
+    placeholder: "\u0422\u0430\u0432\u0440\u0438\u0447\u0435\u0441\u043A\u0430\u044F ...",
+    type: "text",
+    value: value,
+    classNameLabel: "block mb-2 font-medium",
+    classNameInput: " px-2 border-2 rounded w-full",
+    onChange: onChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-end"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "font-medium border-2 rounded-lg border-blue-500 px-2 py-1 hover:bg-blue-500 hover:text-white active:bg-blue-900",
+    type: "submit"
+  }, "\u0421\u043E\u0437\u0434\u0430\u0442\u044C"))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateStreet);
+
+/***/ }),
+
+/***/ "./src/client/WindowLK/Project/NameProject/City.jsx":
+/*!**********************************************************!*\
+  !*** ./src/client/WindowLK/Project/NameProject/City.jsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _Create_CreateCity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Create/CreateCity */ "./src/client/WindowLK/Project/Create/CreateCity.jsx");
+/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
 
 var City = function City(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      _onClick = _ref.onClick;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isOpen = _useState2[0],
       setIsOpen = _useState2[1];
 
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "w-[300px] h-full border-2 border-sky-600 items-stretch relative bg-blue-200"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_CreateCity__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Create_CreateCity__WEBPACK_IMPORTED_MODULE_1__["default"], {
     isOpen: isOpen,
     setIsOpen: setIsOpen
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5713,7 +5812,7 @@ var City = function City(_ref) {
     className: "text-center font-bold"
   }, "\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u0430"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "flex items-center active:bg-sky-800"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_6__.AiOutlinePlus, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_2__.AiOutlinePlus, {
     className: "hover:fill-blue-600 hover:cursor-pointer hover:w-[1.5em] hover: h-[1.5em]",
     onClick: function onClick() {
       return setIsOpen(true);
@@ -5723,12 +5822,12 @@ var City = function City(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "px-1"
   }, data && data.map(function (city) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
       to: city.name,
       key: city.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-      onClick: function onClick() {
-        return dispatch((0,_store_street__WEBPACK_IMPORTED_MODULE_2__.setStreet)(city.street));
+      onClick: function onClick(evt) {
+        return _onClick(evt, city);
       },
       className: "text-lg font-medium hover:text-blue-400 active:text-blue-800 border-4 rounded-lg border pl-4 my-1 bg-white"
     }, city.name));
@@ -5752,26 +5851,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
-/* harmony import */ var _CreateCity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CreateCity */ "./src/client/WindowLK/Project/CreateCity.jsx");
+/* harmony import */ var react_icons_ai__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-icons/ai */ "./node_modules/react-icons/ai/index.esm.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+/* harmony import */ var _API_api_query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../API/api_query */ "./src/client/API/api_query.js");
+/* harmony import */ var _Create_CreateStreet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Create/CreateStreet */ "./src/client/WindowLK/Project/Create/CreateStreet.jsx");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
-var Street = function Street(_ref) {
-  var street = _ref.street;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-    className: "absolute top-0 h-full w-full px-1 bg-blue-200"
-  }, street && street.map(function (street) {
+
+
+
+var Street = function Street() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isOpenStreet = _useState2[0],
+      setIsOpenStreet = _useState2[1];
+
+  var street = JSON.parse(localStorage.getItem('city'));
+
+  var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useQuery)(_API_api_query__WEBPACK_IMPORTED_MODULE_1__.GET_STREET, {
+    variables: {
+      getStreetId: street.id,
+      name: street.name
+    }
+  }),
+      data = _useQuery.data,
+      error = _useQuery.error,
+      loading = _useQuery.loading,
+      refetch = _useQuery.refetch;
+
+  if (loading) return "Loading...";
+  if (error) return console.log(error.message);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "absolute top-0 h-full w-full bg-blue-200 border-2 border-sky-600 items-stretch"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Create_CreateStreet__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    isOpenStreet: isOpenStreet,
+    setIsOpenStreet: setIsOpenStreet,
+    refetch: refetch
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex justify-between py-[5px] px-[5px] border-b-2 bg-blue-300 border-sky-900"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "text-center font-bold"
+  }, "\u041D\u0430\u0438\u043C\u0435\u043D\u043E\u0432\u0430\u043D\u0438\u0435 \u0443\u043B\u0438\u0446\u044B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "flex items-center active:bg-sky-800"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_4__.AiOutlinePlus, {
+    className: "hover:fill-blue-600 hover:cursor-pointer hover:w-[1.5em] hover: h-[1.5em]",
+    onClick: function onClick() {
+      return setIsOpenStreet(true);
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "py-[5px] px-1"
+  }, data && data.getStreet.street.map(function (street) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
       key: street.id,
       className: "text-lg font-medium hover:text-blue-400 active:text-blue-800 border-4 rounded-lg border pl-4 my-1 px-4 cursor-pointer bg-white flex justify-between items-center"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, street.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_ai__WEBPACK_IMPORTED_MODULE_2__.AiOutlinePlus, {
-      onClick: function onClick() {
-        return setIsOpenStreet(true);
-      }
-    }));
-  }));
+    }, street.name);
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Street);
@@ -5792,29 +5939,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _NameProject_City__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NameProject/City */ "./src/client/WindowLK/Project/NameProject/City.jsx");
-/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
+/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/react/hooks/useQuery.js");
 /* harmony import */ var _API_api_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../API/api_query */ "./src/client/API/api_query.js");
+/* harmony import */ var _NameProject_Street__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NameProject/Street */ "./src/client/WindowLK/Project/NameProject/Street.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+
+
 
 
 
 
 
 var Project = function Project() {
-  var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useQuery)(_API_api_query__WEBPACK_IMPORTED_MODULE_2__["default"]),
+  var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_4__.useQuery)(_API_api_query__WEBPACK_IMPORTED_MODULE_2__.GET_CITY),
       loading = _useQuery.loading,
       error = _useQuery.error,
       data = _useQuery.data;
 
   if (loading) return "Loading";
-  if (error) return "".concat(error.message); // const street = (data) => {
-  //
-  // }
+  if (error) return console.log(error.message);
+
+  var handlerClick = function handlerClick(evt, city) {
+    localStorage.setItem('city', JSON.stringify({
+      id: city.id,
+      name: city.name
+    }));
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "relative"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NameProject_City__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    data: data.city
-  }));
+    data: data.city,
+    onClick: handlerClick
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+    path: "/:city",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NameProject_Street__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Project);
@@ -54130,13 +54290,18 @@ const SET_USER = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
 
 const CREATE_CITY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
     mutation Mutation($name: String!) {
-        createCity(name: $name)
+        createCity(name: $name) {
+            id
+            name
+        }
     }
 `
 
 const SET_STREET = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
-    mutation Mutation($setStreetId: String!, $name: String!) {
-        setStreet(id: $setStreetId, name: $name)
+    mutation SetStreet($setStreetId: String!, $name: String!) {
+        setStreet(id: $setStreetId, name: $name) {
+            id
+        }
     }
 `
 
@@ -54156,7 +54321,8 @@ const SET_STREET = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "GET_CITY": () => (/* binding */ GET_CITY),
+/* harmony export */   "GET_STREET": () => (/* binding */ GET_STREET)
 /* harmony export */ });
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ "./node_modules/graphql-tag/lib/index.js");
 
@@ -54166,6 +54332,12 @@ const GET_CITY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
         city {
             id
             name
+        }
+    }
+`
+const GET_STREET = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
+    query Query($getStreetId: String!, $name: String!) {
+        getStreet(id: $getStreetId, name: $name) {
             street {
                 id
                 name
@@ -54174,7 +54346,9 @@ const GET_CITY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
     }
 `
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (GET_CITY);
+
+
+
 
 /***/ }),
 
@@ -54189,22 +54363,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
+/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var _login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./login */ "./src/store/login.js");
 /* harmony import */ var _isloggedin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isloggedin */ "./src/store/isloggedin.js");
-/* harmony import */ var _street__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./street */ "./src/store/street.js");
 
 
 
 
 
 
-
-const store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_3__.configureStore)({
+const store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.configureStore)({
     reducer: {
         user: _login__WEBPACK_IMPORTED_MODULE_0__["default"],
         checkIn: _isloggedin__WEBPACK_IMPORTED_MODULE_1__["default"],
-        street: _street__WEBPACK_IMPORTED_MODULE_2__["default"]
     }
 })
 
@@ -54279,38 +54450,6 @@ const userName = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.createSlice)({
 
 const {setUserName} = userName.actions
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userName.reducer);
-
-/***/ }),
-
-/***/ "./src/store/street.js":
-/*!*****************************!*\
-  !*** ./src/store/street.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "setStreet": () => (/* binding */ setStreet)
-/* harmony export */ });
-/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-
-
-const street = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
-    name: 'street',
-    initialState: {
-        street: null
-    },
-    reducers: {
-        setStreet(state, action) {
-            state.street = action.payload
-        }
-    }
-})
-
-const {setStreet} = street.actions
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (street.reducer);
 
 /***/ }),
 
@@ -70540,7 +70679,7 @@ if (hasSymbols()) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("d0c151f691647eee9898")
+/******/ 		__webpack_require__.h = () => ("ef45dc5be2a3bbdc585d")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

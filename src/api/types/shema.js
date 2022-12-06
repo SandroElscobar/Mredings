@@ -20,11 +20,13 @@ module.exports = gql`
     type Query {
         users: [User!]!
         city: [City]
+        getStreet(id: String!, name: String!): City
+        getCity(id: String!): City!
     }
     type Mutation {
         createUser(name: String!, email: String!, password: String!): String!
         signIn(email: String!, password: String!): String!
-        createCity(name: String!): String!
-        setStreet(id: String!, name: String!): String!
+        createCity(name: String!): City!
+        setStreet(id: String!, name: String!): City!
     }
 `

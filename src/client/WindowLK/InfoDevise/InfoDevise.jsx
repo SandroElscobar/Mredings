@@ -1,5 +1,5 @@
 import React from "react";
-import CreateCity from "../Project/CreateCity";
+import CreateCity from "../Project/Create/CreateCity";
 
 const InfoDevise = () => {
     return (

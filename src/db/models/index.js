@@ -5,7 +5,7 @@ const {Street} = require('./street')
 const models = {
     User,
     City,
-    Street
+    Street,
 }
 
 module.exports = models

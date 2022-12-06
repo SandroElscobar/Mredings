@@ -1,17 +1,10 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {setStreet} from "../../../../store/street";
-import CreateCity from "../CreateCity";
+import CreateCity from "../Create/CreateCity";
 import {AiOutlinePlus} from "react-icons/ai";
-import Street from "./Street";
-import {useQuery} from "@apollo/client";
-import GET_CITY from "../../../API/api_query";
 
-const City = ({data}) => {
+const City = ({data, onClick}) => {
     const [isOpen, setIsOpen] = useState(false)
-    const dispatch = useDispatch()
-
     return (
         <div className='w-[300px] h-full border-2 border-sky-600 items-stretch relative bg-blue-200'>
             <CreateCity
@@ -33,7 +26,7 @@ const City = ({data}) => {
                                 key={city.id}
                             >
                                 <li
-                                    onClick={() => dispatch(setStreet(city.street))}
+                                    onClick={(evt) => onClick(evt, city)}
                                     className='text-lg font-medium hover:text-blue-400 active:text-blue-800 border-4 rounded-lg border pl-4 my-1 bg-white'
                                 >
                                     {city.name}
