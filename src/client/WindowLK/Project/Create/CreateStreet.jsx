@@ -6,7 +6,9 @@ import {useMutation} from "@apollo/client";
 
 
 const CreateStreet = ({isOpenStreet, setIsOpenStreet, refetch}) => {
-    const [setStreet, {error, loading}] = useMutation(SET_STREET)
+    const [setStreet, {error, loading}] = useMutation(SET_STREET,{
+        onCompleted: () => refetch({getStreetId: localStorage.getItem('city')})
+    })
     const [value, setValue] = useState('')
     if (error) return console.log(error.message)
     if (loading) return "Loading..."
@@ -17,8 +19,11 @@ const CreateStreet = ({isOpenStreet, setIsOpenStreet, refetch}) => {
 
     const handlerCreateStreet = (evt) => {
         evt.preventDefault()
-        setStreet({variables: {id: localStorage.getItem('city'), name: value}}).then(() => console.log("Успешно"))
+        setStreet({variables: {setStreetId: localStorage.getItem('city'), name: value}}).then(() => console.log("Успешно"))
+        setValue('')
+        setIsOpenStreet(false)
     }
+    console.log("render create")
     return (isOpenStreet &&
         <div className='max-w-2xl border-2 rounded-lg border-blue-500 absolute right-[-300px] bg-white'>
             <div className='absolute right-[-15px] top-[-15px]'><AiFillCloseCircle onClick={() => setIsOpenStreet(false)} size={30} color='blue' className='hover:fill-amber-400 overflow-hidden stroke-lime-700 hover:cursor-pointer rounded-[50%] bg-white'/></div>

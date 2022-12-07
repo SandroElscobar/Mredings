@@ -5,12 +5,14 @@ import {GET_STREET} from './../../../API/api_query'
 import CreateStreet from "../Create/CreateStreet";
 const Street = () => {
     const [isOpenStreet, setIsOpenStreet] = useState(false)
-    const street = JSON.parse(localStorage.getItem('city'))
+    const id = localStorage.getItem('city')
     const {data, error, loading, refetch} = useQuery(GET_STREET, {
-            variables: {getStreetId: street.id, name: street.name}
+            variables: {getStreetId: id}
         })
     if (loading) return `Loading...`
     if (error) return console.log(error.message)
+
+    console.log(data)
     return (
         <div className='absolute top-0 h-full w-full bg-blue-200 border-2 border-sky-600 items-stretch'>
             <CreateStreet

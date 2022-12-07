@@ -13,7 +13,7 @@ module.exports = {
     },
     getStreet: async (parent, {id, name}, {models, user}) => {
         if (!user) return new AuthenticationError("Вы должны авторизоваться чтобы создавать проекты!")
-        return models.City.findOne({id, name})
+        return (await models.City.findById({_id:id}))
     },
     getCity: async (parent, {id}, {models, user}) => {
         if (!user) return new AuthenticationError("Вы должны авторизоваться чтобы создавать проекты!")

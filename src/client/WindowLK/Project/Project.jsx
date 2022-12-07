@@ -12,13 +12,13 @@ const Project = () => {
     if (loading) return "Loading"
     if (error) return console.log(error.message)
     const handlerClick = (evt, city) => {
-        localStorage.setItem('city', JSON.stringify({id: city.id, name: city.name}))
+        localStorage.setItem('city', city.id)
     }
     return (
             <div className='relative'>
                 <City data={data.city} onClick={handlerClick}/>
                 <Routes>
-                    <Route path='/:city' element={<Street />}/>
+                    <Route path='/:city' element={<Street/>}/>
                 </Routes>
             </div>
     )

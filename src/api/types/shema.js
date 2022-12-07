@@ -20,7 +20,7 @@ module.exports = gql`
     type Query {
         users: [User!]!
         city: [City]
-        getStreet(id: String!, name: String!): City
+        getStreet(id: String!): City
         getCity(id: String!): City!
     }
     type Mutation {

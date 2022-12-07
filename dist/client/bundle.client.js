@@ -5691,7 +5691,13 @@ var CreateStreet = function CreateStreet(_ref) {
       setIsOpenStreet = _ref.setIsOpenStreet,
       refetch = _ref.refetch;
 
-  var _useMutation = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useMutation)(_API_api_mutation__WEBPACK_IMPORTED_MODULE_2__.SET_STREET),
+  var _useMutation = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useMutation)(_API_api_mutation__WEBPACK_IMPORTED_MODULE_2__.SET_STREET, {
+    onCompleted: function onCompleted() {
+      return refetch({
+        getStreetId: localStorage.getItem('city')
+      });
+    }
+  }),
       _useMutation2 = _slicedToArray(_useMutation, 2),
       setStreet = _useMutation2[0],
       _useMutation2$ = _useMutation2[1],
@@ -5715,14 +5721,17 @@ var CreateStreet = function CreateStreet(_ref) {
     evt.preventDefault();
     setStreet({
       variables: {
-        id: localStorage.getItem('city'),
+        setStreetId: localStorage.getItem('city'),
         name: value
       }
     }).then(function () {
       return console.log("Успешно");
     });
+    setValue('');
+    setIsOpenStreet(false);
   };
 
+  console.log("render create");
   return isOpenStreet && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "max-w-2xl border-2 rounded-lg border-blue-500 absolute right-[-300px] bg-white"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5879,12 +5888,11 @@ var Street = function Street() {
       isOpenStreet = _useState2[0],
       setIsOpenStreet = _useState2[1];
 
-  var street = JSON.parse(localStorage.getItem('city'));
+  var id = localStorage.getItem('city');
 
   var _useQuery = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_3__.useQuery)(_API_api_query__WEBPACK_IMPORTED_MODULE_1__.GET_STREET, {
     variables: {
-      getStreetId: street.id,
-      name: street.name
+      getStreetId: id
     }
   }),
       data = _useQuery.data,
@@ -5894,6 +5902,7 @@ var Street = function Street() {
 
   if (loading) return "Loading...";
   if (error) return console.log(error.message);
+  console.log(data);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "absolute top-0 h-full w-full bg-blue-200 border-2 border-sky-600 items-stretch"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Create_CreateStreet__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -5960,10 +5969,7 @@ var Project = function Project() {
   if (error) return console.log(error.message);
 
   var handlerClick = function handlerClick(evt, city) {
-    localStorage.setItem('city', JSON.stringify({
-      id: city.id,
-      name: city.name
-    }));
+    localStorage.setItem('city', city.id);
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -54336,8 +54342,8 @@ const GET_CITY = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
     }
 `
 const GET_STREET = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`
-    query Query($getStreetId: String!, $name: String!) {
-        getStreet(id: $getStreetId, name: $name) {
+    query GetStreet($getStreetId: String!) {
+        getStreet(id: $getStreetId) {
             street {
                 id
                 name
@@ -70679,7 +70685,7 @@ if (hasSymbols()) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("ef45dc5be2a3bbdc585d")
+/******/ 		__webpack_require__.h = () => ("0579491bdd093acd145e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

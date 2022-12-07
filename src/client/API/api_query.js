@@ -9,8 +9,8 @@ const GET_CITY = gql`
     }
 `
 const GET_STREET = gql`
-    query Query($getStreetId: String!, $name: String!) {
-        getStreet(id: $getStreetId, name: $name) {
+    query GetStreet($getStreetId: String!) {
+        getStreet(id: $getStreetId) {
             street {
                 id
                 name
